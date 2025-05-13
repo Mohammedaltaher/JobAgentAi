@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\agent",
+    "\\env",
+    "\\logs",
+    "\\venv"
+  ],
+  "SelectedNode": "\\app\\agent\\root_agent.py",
+  "PreviewInSolutionExplorer": false
+}

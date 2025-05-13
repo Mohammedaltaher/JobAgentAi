@@ -1,0 +1,27 @@
+{
+    "full_name": "Sarah Ibrahim",
+    "email": "sarah@example.com",
+    "phone": "+249 912345678",
+    "linkedin": "linkedin.com/in/sarahibrahim",
+    "summary": "Creative software engineer with 5+ years of experience in full-stack development.",
+    "skills": ["Python", "Django", "React", "SQL", "Docker"],
+    "experience": [
+      {
+        "title": "Senior Developer",
+        "company": "Tech Solutions",
+        "period": "2021 - Present",
+        "details": [
+          "Led development of internal CRM system using Django.",
+          "Improved system performance by 30% through code refactoring."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Sc. in Computer Science",
+        "institution": "University of Khartoum",
+        "period": "2014 - 2018"
+      }
+    ]
+  }
+  

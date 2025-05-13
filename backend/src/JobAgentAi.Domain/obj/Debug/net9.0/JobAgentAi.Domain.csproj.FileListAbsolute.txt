@@ -1,0 +1,11 @@
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Domain\bin\Debug\net9.0\JobAgentAi.Domain.deps.json
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Domain\bin\Debug\net9.0\JobAgentAi.Domain.dll
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Domain\bin\Debug\net9.0\JobAgentAi.Domain.pdb
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Domain\obj\Debug\net9.0\JobAgentAi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Domain\obj\Debug\net9.0\JobAgentAi.Domain.AssemblyInfoInputs.cache
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Domain\obj\Debug\net9.0\JobAgentAi.Domain.AssemblyInfo.cs
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Domain\obj\Debug\net9.0\JobAgentAi.Domain.csproj.CoreCompileInputs.cache
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Domain\obj\Debug\net9.0\JobAgentAi.Domain.dll
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Domain\obj\Debug\net9.0\refint\JobAgentAi.Domain.dll
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Domain\obj\Debug\net9.0\JobAgentAi.Domain.pdb
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Domain\obj\Debug\net9.0\ref\JobAgentAi.Domain.dll

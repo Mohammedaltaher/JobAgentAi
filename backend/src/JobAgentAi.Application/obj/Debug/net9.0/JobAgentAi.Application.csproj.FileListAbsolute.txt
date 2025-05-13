@@ -1,0 +1,15 @@
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Application\bin\Debug\net9.0\JobAgentAi.Application.deps.json
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Application\bin\Debug\net9.0\JobAgentAi.Application.dll
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Application\bin\Debug\net9.0\JobAgentAi.Application.pdb
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Application\bin\Debug\net9.0\JobAgentAi.Domain.dll
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Application\bin\Debug\net9.0\JobAgentAi.Domain.pdb
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Application\obj\Debug\net9.0\JobAgentAi.Application.csproj.AssemblyReference.cache
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Application\obj\Debug\net9.0\JobAgentAi.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Application\obj\Debug\net9.0\JobAgentAi.Application.AssemblyInfoInputs.cache
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Application\obj\Debug\net9.0\JobAgentAi.Application.AssemblyInfo.cs
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Application\obj\Debug\net9.0\JobAgentAi.Application.csproj.CoreCompileInputs.cache
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Application\obj\Debug\net9.0\JobAgent.7F19A9EA.Up2Date
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Application\obj\Debug\net9.0\JobAgentAi.Application.dll
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Application\obj\Debug\net9.0\refint\JobAgentAi.Application.dll
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Application\obj\Debug\net9.0\JobAgentAi.Application.pdb
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Application\obj\Debug\net9.0\ref\JobAgentAi.Application.dll

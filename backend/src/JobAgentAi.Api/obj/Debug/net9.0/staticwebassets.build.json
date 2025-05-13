@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "naKrG4lKmHqa2f9Mf0G0IJeaPdRJVGYVzyFltANHoRc=",
+  "Source": "JobAgentAi.Api",
+  "BasePath": "_content/JobAgentAi.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

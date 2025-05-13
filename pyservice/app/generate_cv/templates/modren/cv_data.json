@@ -1,0 +1,196 @@
+{
+  "personal_information": {
+    "full_name": "Mohamed Eltaher",
+    "email": "dev.eltaher@gmail.com",
+    "phone": "+971585199391",
+    "address": "Sharjah, UAE",
+    "linkedin": null,
+    "website": null,
+    "github": null,
+    "profile_summary": "Highly skilled Full stack Developer specializing in .NET and C#, with extensive experience in designing and implementing robust backend systems using Microservices Architecture. Proficient in building APIs (REST, SOAP), leveraging ORM technologies (Entity Framework, Dapper), and working with various databases (MSSQL, MongoDB, MySQL, Cosmos DB, Oracle). Experienced in containerization with Docker, cloud platforms (Azure), and implementing asynchronous messaging (RabbitMQ), CQRS (MediatR, Hangfire), and DDD. Proven ability to solve complex problems, manage multi-project environments, and deliver scalable and efficient solutions."
+  },
+  "career_objective": "Highly skilled Full stack Developer specializing in .NET and C#, with extensive experience in designing and implementing robust backend systems using Microservices Architecture. Proficient in building APIs (REST, SOAP), leveraging ORM technologies (Entity Framework, Dapper), and working with various databases (MSSQL, MongoDB, MySQL, Cosmos DB, Oracle). Experienced in containerization with Docker, cloud platforms (Azure), and implementing asynchronous messaging (RabbitMQ), CQRS (MediatR, Hangfire), and DDD. Proven ability to solve complex problems, manage multi-project environments, and deliver scalable and efficient solutions.",
+  "work_experience": [
+    {
+      "job_title": "Full stack Developer",
+      "company": "Department of Municipal Affairs - Sharjah",
+      "location": "Sharjah, UAE",
+      "start_date": "2022-11",
+      "end_date": null,
+      "is_current": true,
+      "responsibilities": [
+        "Led the development and management of a large-scale system for building and construction NOC management across Sharjah municipalities."
+      ],
+      "achievements": [
+        "Successfully built a dynamic NOC management system enabling administrators to define customizable services, fields, and workflows, significantly streamlining the approval process.",
+        "Implemented a robust microservices architecture utilizing MediatR for CQRS and RabbitMQ for asynchronous message processing, enhancing system scalability and maintainability.",
+        "Developed an intuitive admin interface for efficient process control and simplified service management across multiple municipalities."
+      ]
+    },
+    {
+      "job_title": "Backend Developer (.Net)",
+      "company": "Ahoy",
+      "location": "Dubai, UAE",
+      "start_date": "2022-04",
+      "end_date": "2022-11",
+      "is_current": false,
+      "responsibilities": [
+        "Contributed to the development of Ahoy Management Studio (AMS), a SaaS platform providing tracking and movement solutions."
+      ],
+      "achievements": [
+        "Developed and optimized APIs for point-of-interest indexing using Azure Cognitive Search, resulting in significantly faster data retrieval and improved platform performance."
+      ]
+    },
+    {
+      "job_title": "Backend Developer (.Net)",
+      "company": "Dubai Civil Aviation Authority",
+      "location": "Dubai, UAE",
+      "start_date": "2020-07",
+      "end_date": "2022-04",
+      "is_current": false,
+      "responsibilities": [
+        "Developed the Dubai Civil Aviation Authority website and integrated it with various government entities to automate processes."
+      ],
+      "achievements": [
+        "Successfully configured the EPMS ERP system and conducted comprehensive end-user training, providing demos and support.",
+        "Integrated Azure services (Bing Search, AI image processing) into internal systems, enhancing automation capabilities."
+      ]
+    },
+    {
+      "job_title": "Backend Developer (.Net)",
+      "company": "Datamatix",
+      "location": "Dubai, UAE",
+      "start_date": "2018-04",
+      "end_date": "2020-05",
+      "is_current": false,
+      "responsibilities": [
+        "Designed and implemented a new ERP system for charitable organizations based on DDD-oriented microservices."
+      ],
+      "achievements": [
+        "Implemented domain events using MediatR and integrated with Hangfire for CQRS scheduling, improving system architecture and efficiency.",
+        "Applied SOLID principles extensively and built resilient, scalable applications using an EventBus abstraction for asynchronous messaging with RabbitMQ, significantly enhancing system reliability."
+      ]
+    },
+    {
+      "job_title": "Full Stack Developer (.NET)",
+      "company": "HASH IT",
+      "location": "Khartoum, Sudan",
+      "start_date": "2017-03",
+      "end_date": "2018-04",
+      "is_current": false,
+      "responsibilities": [
+        "Worked as a Full Stack Developer on multiple projects for diverse industries."
+      ],
+      "achievements": []
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor",
+      "field_of_study": "Computer Science",
+      "institution": "Alneelain university",
+      "location": "Khartoum, Sudan",
+      "start_date": null,
+      "end_date": null,
+      "grade": null
+    }
+  ],
+  "skills": {
+    "categories": [
+      {
+        "name": "Backend",
+        "skills": [
+          "C#",
+          "ASP.NET Core",
+          "AspNet MVC",
+          "OOP",
+          ".NET",
+          ".NET Core",
+          ".NET Framework",
+          "Swagger",
+          "WebForms",
+          "RESTful api",
+          "Microservices",
+          "MediatR",
+          "RabbitMQ",
+          "CQRS",
+          "DDD",
+          "SOLID"
+        ]
+      },
+      {
+        "name": "Database",
+        "skills": [
+          "MSSQL",
+          "MongoDB",
+          "dapper",
+          "MySQL",
+          "Entity framework",
+          "ADO.NET",
+          "Cosmos DB",
+          "Oracle"
+        ]
+      },
+      {
+        "name": "Frontend",
+        "skills": [
+          "HTML",
+          "CSS",
+          "Blazor",
+          "JQuery",
+          "JSON",
+          "Angular",
+          "React",
+          "XML",
+          "AJAX",
+          "Bootstrap",
+          "Javascript"
+        ]
+      },
+      {
+        "name": "DevOps",
+        "skills": [
+          "Unit Testing",
+          "NUnit",
+          "Moq",
+          "IIS",
+          "Git",
+          "TFS",
+          "GitHub",
+          "Azure",
+          "Docker"
+        ]
+      }
+    ]
+  },
+  "certifications": [],
+  "projects": [
+    {
+      "title": "EDU PRO",
+      "description": "Developed a real-time information management system with over 30 modules for educational institutions.",
+      "technologies": [],
+      "url": null
+    },
+    {
+      "title": "DENTAL.PRO",
+      "description": "Developed a system streamlining dental care and clinic operations.",
+      "technologies": [],
+      "url": null
+    },
+    {
+      "title": "FINGER.PAY",
+      "description": "Developed a biometric payment system utilizing fingerprint authentication for secure transactions.",
+      "technologies": [],
+      "url": null
+    }
+  ],
+  "languages": [
+    "Arabic",
+    "English"
+  ],
+  "volunteering": [],
+  "awards": [],
+  "publications": [],
+  "interests": [],
+  "references": []
+}

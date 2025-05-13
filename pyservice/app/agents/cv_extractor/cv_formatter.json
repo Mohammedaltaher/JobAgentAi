@@ -1,0 +1,113 @@
+{
+    "personal_information": {
+        "full_name": "",
+        "email": "",
+        "phone": "",
+        "address": "",
+        "linkedin": "",
+        "website": "",
+        "github": "",
+        "profile_summary": ""
+    },
+    "career_objective": "",
+    "work_experience": [
+        {
+            "job_title": "",
+            "company": "",
+            "location": "",
+            "start_date": "",
+            "end_date": "",
+            "is_current": false,
+            "responsibilities": [
+                ""
+            ],
+            "achievements": [
+                ""
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "",
+            "field_of_study": "",
+            "institution": "",
+            "location": "",
+            "start_date": "",
+            "end_date": "",
+            "grade": ""
+        }
+    ],
+    "skills": {
+        "categories": [
+            {
+                "name": "",
+                "skills": [
+                    ""
+                ]
+            }
+        ]
+    },
+    "certifications": [
+        {
+            "title": "",
+            "issuer": "",
+            "issue_date": "",
+            "expiration_date": "",
+            "credential_id": "",
+            "credential_url": ""
+        }
+    ],
+    "projects": [
+        {
+            "title": "",
+            "description": "",
+            "technologies": [
+                ""
+            ],
+            "url": ""
+        }
+    ],
+    "languages": [
+        ""
+    ],
+    "volunteering": [
+        {
+            "role": "",
+            "organization": "",
+            "location": "",
+            "start_date": "",
+            "end_date": "",
+            "description": ""
+        }
+    ],
+    "awards": [
+        {
+            "title": "",
+            "issuer": "",
+            "date": "",
+            "description": ""
+        }
+    ],
+    "publications": [
+        {
+            "title": "",
+            "publisher": "",
+            "publication_date": "",
+            "url": "",
+            "description": ""
+        }
+    ],
+    "interests": [
+        ""
+    ],
+    "references": [
+        {
+            "name": "",
+            "position": "",
+            "company": "",
+            "email": "",
+            "phone": "",
+            "relationship": ""
+        }
+    ]
+}

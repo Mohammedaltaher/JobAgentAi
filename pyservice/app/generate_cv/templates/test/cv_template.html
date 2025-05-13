@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ full_name }} - CV</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 2rem;
+            background: #fdfdfd;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            color: #004080;
+            border-bottom: 2px solid #004080;
+        }
+        h2 {
+            color: #006699;
+            margin-top: 2rem;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        a {
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ full_name }}</h1>
+        <p>Email: {{ email }} | Phone: {{ phone }} | <a href="https://{{ linkedin }}">{{ linkedin }}</a></p>
+        <section>
+            <h2>Profile</h2>
+            <p>{{ summary }}</p>
+        </section>
+        <section>
+            <h2>Skills</h2>
+            <ul>
+                {% for skill in skills %}
+                    <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section>
+            <h2>Experience</h2>
+            {% for job in experience %}
+                <h3>{{ job.title }} - {{ job.company }}</h3>
+                <p><em>{{ job.period }}</em></p>
+                <ul>
+                    {% for item in job.details %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </section>
+        <section>
+            <h2>Education</h2>
+            {% for edu in education %}
+                <p><strong>{{ edu.degree }}</strong>, {{ edu.institution }} <br>
+                <em>{{ edu.period }}</em></p>
+            {% endfor %}
+        </section>
+    </div>
+</body>
+</html>

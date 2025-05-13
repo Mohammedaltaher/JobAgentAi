@@ -1,0 +1,15 @@
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Infrastructure\bin\Debug\net9.0\JobAgentAi.Infrastructure.deps.json
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Infrastructure\bin\Debug\net9.0\JobAgentAi.Infrastructure.dll
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Infrastructure\bin\Debug\net9.0\JobAgentAi.Infrastructure.pdb
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Infrastructure\bin\Debug\net9.0\JobAgentAi.Domain.dll
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Infrastructure\bin\Debug\net9.0\JobAgentAi.Domain.pdb
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Infrastructure\obj\Debug\net9.0\JobAgentAi.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Infrastructure\obj\Debug\net9.0\JobAgentAi.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Infrastructure\obj\Debug\net9.0\JobAgentAi.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Infrastructure\obj\Debug\net9.0\JobAgentAi.Infrastructure.AssemblyInfo.cs
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Infrastructure\obj\Debug\net9.0\JobAgentAi.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Infrastructure\obj\Debug\net9.0\JobAgent.FB06790A.Up2Date
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Infrastructure\obj\Debug\net9.0\JobAgentAi.Infrastructure.dll
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Infrastructure\obj\Debug\net9.0\refint\JobAgentAi.Infrastructure.dll
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Infrastructure\obj\Debug\net9.0\JobAgentAi.Infrastructure.pdb
+C:\Users\DMA\source\repos\PythonPtojects\JobAgentAi\backend\src\JobAgentAi.Infrastructure\obj\Debug\net9.0\ref\JobAgentAi.Infrastructure.dll

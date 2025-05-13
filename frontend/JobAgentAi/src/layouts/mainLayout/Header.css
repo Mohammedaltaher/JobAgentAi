@@ -1,0 +1,116 @@
+/* Base Styles */
+.header {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1B2A4E;
+  text-decoration: none;
+}
+
+/* Desktop Navigation */
+.desktop-nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.desktop-nav a {
+  color: #4A5568;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.desktop-nav a:hover {
+  color: #1B2A4E;
+}
+
+/* Mobile Menu Button (Hidden on Desktop) */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Auth Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.login-button {
+  padding: 0.5rem 1rem;
+  background: none;
+  border: 1px solid #E2E8F0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.signup-button {
+  padding: 0.5rem 1rem;
+  background-color: #21CE99;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  display: none;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-top: 1px solid #E2E8F0;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-nav li {
+  padding: 0.5rem 0;
+}
+
+.mobile-nav a {
+  color: #4A5568;
+  text-decoration: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+  .auth-buttons {
+    display: none;
+  }
+}

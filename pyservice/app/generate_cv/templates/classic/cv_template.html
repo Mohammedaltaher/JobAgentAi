@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ personal_information.full_name }} - CV</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #334155;
+            --light-gray: #f1f5f9;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #64748b;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: white;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--medium-gray);
+        }
+        
+        .name-title h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        .contact-info {
+            text-align: right;
+        }
+        
+        .contact-info p {
+            margin: 0.3rem 0;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        section {
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 0.3rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        h3 {
+            margin-bottom: 0.3rem;
+            color: var(--text-color);
+        }
+        
+        .job, .education-item, .certification, .project, .volunteering, .award, .publication {
+            margin-bottom: 1.5rem;
+        }
+        
+        .job-header, .education-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .job-title, .education-degree {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .company, .institution {
+            font-style: italic;
+        }
+        
+        .date {
+            color: var(--dark-gray);
+        }
+        
+        ul {
+            padding-left: 1.2rem;
+            margin: 0.5rem 0;
+        }
+        
+        li {
+            margin-bottom: 0.3rem;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .skill-category h4 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            background-color: var(--light-gray);
+            padding: 0.3rem 0.8rem;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .contact-info {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="name-title">
+            <h1>{{ personal_information.full_name }}</h1>
+            {% if personal_information.profile_summary %}
+                <p>{{ personal_information.profile_summary }}</p>
+            {% endif %}
+        </div>
+        <div class="contact-info">
+            {% if personal_information.email %}
+                <p><strong>Email:</strong> {{ personal_information.email }}</p>
+            {% endif %}
+            {% if personal_information.phone %}
+                <p><strong>Phone:</strong> {{ personal_information.phone }}</p>
+            {% endif %}
+            {% if personal_information.address %}
+                <p><strong>Location:</strong> {{ personal_information.address }}</p>
+            {% endif %}
+            {% if personal_information.linkedin %}
+                <p><strong>LinkedIn:</strong> <a href="https://{{ personal_information.linkedin }}">{{ personal_information.linkedin }}</a></p>
+            {% endif %}
+            {% if personal_information.github %}
+                <p><strong>GitHub:</strong> <a href="https://{{ personal_information.github }}">{{ personal_information.github }}</a></p>
+            {% endif %}
+            {% if personal_information.website %}
+                <p><strong>Website:</strong> <a href="{{ personal_information.website }}">{{ personal_information.website }}</a></p>
+            {% endif %}
+        </div>
+    </div>
+
+    {% if career_objective %}
+    <section>
+        <h2>Career Objective</h2>
+        <p>{{ career_objective }}</p>
+    </section>
+    {% endif %}
+
+    {% if work_experience and work_experience[0].job_title %}
+    <section>
+        <h2>Work Experience</h2>
+        {% for job in work_experience %}
+            {% if job.job_title %}
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">{{ job.job_title }}</span>
+                        {% if job.company %} at <span class="company">{{ job.company }}</span>{% endif %}
+                    </div>
+                    <div class="date">
+                        {{ job.start_date }} - {% if job.is_current %}Present{% else %}{{ job.end_date }}{% endif %}
+                    </div>
+                </div>
+                {% if job.location %}
+                    <p><em>{{ job.location }}</em></p>
+                {% endif %}
+                
+                {% if job.responsibilities and job.responsibilities[0] %}
+                <h4>Responsibilities:</h4>
+                <ul>
+                    {% for responsibility in job.responsibilities %}
+                        {% if responsibility %}<li>{{ responsibility }}</li>{% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                
+                {% if job.achievements and job.achievements[0] %}
+                <h4>Achievements:</h4>
+                <ul>
+                    {% for achievement in job.achievements %}
+                        {% if achievement %}<li>{{ achievement }}</li>{% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+    {% endif %}
+
+    {% if education and education[0].degree %}
+    <section>
+        <h2>Education</h2>
+        {% for edu in education %}
+            {% if edu.degree %}
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <span class="education-degree">{{ edu.degree }}</span>
+                        {% if edu.field_of_study %} in {{ edu.field_of_study }}{% endif %}
+                        {% if edu.institution %} at <span class="institution">{{ edu.institution }}</span>{% endif %}
+                    </div>
+                    <div class="date">
+                        {{ edu.start_date }} - {{ edu.end_date }}
+                    </div>
+                </div>
+                {% if edu.location %}
+                    <p><em>{{ edu.location }}</em></p>
+                {% endif %}
+                {% if edu.grade %}
+                    <p><strong>Grade:</strong> {{ edu.grade }}</p>
+                {% endif %}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+    {% endif %}
+
+    {% if skills and skills.categories and skills.categories[0].name %}
+    <section>
+        <h2>Skills</h2>
+        <div class="skills-container">
+            {% for category in skills.categories %}
+                {% if category.name and category.skills and category.skills[0] %}
+                <div class="skill-category">
+                    <h4>{{ category.name }}</h4>
+                    <div class="skill-tags">
+                        {% for skill in category.skills %}
+                            {% if skill %}<span class="skill-tag">{{ skill }}</span>{% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if certifications and certifications[0].title %}
+    <section>
+        <h2>Certifications</h2>
+        {% for cert in certifications %}
+            {% if cert.title %}
+            <div class="certification">
+                <h3>{{ cert.title }}</h3>
+                <p>
+                    {% if cert.issuer %}<strong>{{ cert.issuer }}</strong>{% endif %}
+                    {% if cert.issue_date %} | {{ cert.issue_date }}{% endif %}
+                    {% if cert.expiration_date %} - {{ cert.expiration_date }}{% endif %}
+                </p>
+                {% if cert.credential_id %}
+                    <p><strong>Credential ID:</strong> {{ cert.credential_id }}</p>
+                {% endif %}
+                {% if cert.credential_url %}
+                    <p><a href="{{ cert.credential_url }}">View Credential</a></p>
+                {% endif %}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+    {% endif %}
+
+    {% if projects and projects[0].title %}
+    <section>
+        <h2>Projects</h2>
+        {% for project in projects %}
+            {% if project.title %}
+            <div class="project">
+                <h3>{{ project.title }}</h3>
+                {% if project.description %}
+                    <p>{{ project.description }}</p>
+                {% endif %}
+                {% if project.technologies and project.technologies[0] %}
+                    <p><strong>Technologies:</strong> {{ project.technologies|join(', ') }}</p>
+                {% endif %}
+                {% if project.url %}
+                    <p><a href="{{ project.url }}">View Project</a></p>
+                {% endif %}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+    {% endif %}
+
+    {% if languages and languages[0] %}
+    <section>
+        <h2>Languages</h2>
+        <div class="skill-tags">
+            {% for language in languages %}
+                {% if language %}<span class="skill-tag">{{ language }}</span>{% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if volunteering and volunteering[0].role %}
+    <section>
+        <h2>Volunteering</h2>
+        {% for volunteer in volunteering %}
+            {% if volunteer.role %}
+            <div class="volunteering">
+                <h3>{{ volunteer.role }}</h3>
+                <p>
+                    {% if volunteer.organization %}<strong>{{ volunteer.organization }}</strong>{% endif %}
+                    {% if volunteer.location %} | {{ volunteer.location }}{% endif %}
+                    {% if volunteer.start_date %} | {{ volunteer.start_date }} - {{ volunteer.end_date }}{% endif %}
+                </p>
+                {% if volunteer.description %}
+                    <p>{{ volunteer.description }}</p>
+                {% endif %}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+    {% endif %}
+
+    {% if awards and awards[0].title %}
+    <section>
+        <h2>Awards</h2>
+        {% for award in awards %}
+            {% if award.title %}
+            <div class="award">
+                <h3>{{ award.title }}</h3>
+                <p>
+                    {% if award.issuer %}<strong>{{ award.issuer }}</strong>{% endif %}
+                    {% if award.date %} | {{ award.date }}{% endif %}
+                </p>
+                {% if award.description %}
+                    <p>{{ award.description }}</p>
+                {% endif %}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+    {% endif %}
+
+    {% if publications and publications[0].title %}
+    <section>
+        <h2>Publications</h2>
+        {% for publication in publications %}
+            {% if publication.title %}
+            <div class="publication">
+                <h3>{{ publication.title }}</h3>
+                <p>
+                    {% if publication.publisher %}<strong>{{ publication.publisher }}</strong>{% endif %}
+                    {% if publication.publication_date %} | {{ publication.publication_date }}{% endif %}
+                </p>
+                {% if publication.description %}
+                    <p>{{ publication.description }}</p>
+                {% endif %}
+                {% if publication.url %}
+                    <p><a href="{{ publication.url }}">View Publication</a></p>
+                {% endif %}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+    {% endif %}
+
+    {% if interests and interests[0] %}
+    <section>
+        <h2>Interests</h2>
+        <div class="skill-tags">
+            {% for interest in interests %}
+                {% if interest %}<span class="skill-tag">{{ interest }}</span>{% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if references and references[0].name %}
+    <section>
+        <h2>References</h2>
+        {% for reference in references %}
+            {% if reference.name %}
+            <div class="reference">
+                <h3>{{ reference.name }}</h3>
+                <p>
+                    {% if reference.position %}{{ reference.position }}{% endif %}
+                    {% if reference.company %} at {{ reference.company }}{% endif %}
+                </p>
+                {% if reference.email or reference.phone %}
+                    <p>
+                        {% if reference.email %}{{ reference.email }}{% endif %}
+                        {% if reference.phone %} | {{ reference.phone }}{% endif %}
+                    </p>
+                {% endif %}
+                {% if reference.relationship %}
+                    <p><em>{{ reference.relationship }}</em></p>
+                {% endif %}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+    {% endif %}
+</body>
+</html>

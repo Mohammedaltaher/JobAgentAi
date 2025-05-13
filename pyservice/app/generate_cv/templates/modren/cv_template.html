@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ personal_information.full_name }} - Professional CV</title>
+    <style>
+        :root {
+            --primary: #5e35b1;
+            --primary-light: #7e57c2;
+            --secondary: #26a69a;
+            --dark: #263238;
+            --light: #eceff1;
+            --white: #ffffff;
+            --gray: #90a4ae;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Slab:wght@300;400;500&display=swap');
+        
+        body {
+            font-family: 'Roboto Slab', serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        .page-header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 2.5rem 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .name-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .name-title h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2.8rem;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+        
+        .name-title h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 1.3rem;
+            margin: 0.5rem 0 0;
+            color: var(--light);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-icon {
+            font-size: 1.2rem;
+        }
+        
+        .profile-section {
+            background-color: var(--light);
+            padding: 1.5rem 2rem;
+            margin: 0 2rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .profile-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            margin-top: 0;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        section {
+            margin: 0 2rem 2.5rem;
+        }
+        
+        h2.section-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            font-size: 1.5rem;
+            border-left: 4px solid var(--secondary);
+            padding-left: 1rem;
+            margin: 2rem 0 1.5rem;
+        }
+        
+        .job, .education-item, .certification, .project {
+            margin-bottom: 1.8rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--gray);
+        }
+        
+        .job:last-child, .education-item:last-child {
+            border-bottom: none;
+        }
+        
+        .job-header, .education-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .job-title, .education-degree {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+        
+        .company {
+            color: var(--primary-light);
+            font-weight: 500;
+        }
+        
+        .date {
+            color: var(--gray);
+            font-style: italic;
+        }
+        
+        ul {
+            padding-left: 1.3rem;
+        }
+        
+        li {
+            margin-bottom: 0.4rem;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            background-color: var(--primary-light);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header, section, .profile-section {
+                padding: 1.5rem;
+                margin: 0 0 1.5rem;
+            }
+            
+            .name-title h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="name-title">
+            <h1>{{ personal_information.full_name }}</h1>
+            {% if work_experience and work_experience[0].job_title %}
+                <h2>{{ work_experience[0].job_title }}</h2>
+            {% endif %}
+        </div>
+        
+        <div class="contact-info">
+            {% if personal_information.email %}
+            <div class="contact-item">
+                <span class="contact-icon">Email :</span>
+                <span>{{ personal_information.email }}</span>
+            </div>
+            {% endif %}
+            
+            {% if personal_information.phone %}
+            <div class="contact-item">
+                <span class="contact-icon">Phone :</span>
+                <span>{{ personal_information.phone }}</span>
+            </div>
+            {% endif %}
+            
+            {% if personal_information.address %}
+            <div class="contact-item">
+                <span class="contact-icon">Address :</span>
+                <span>{{ personal_information.address }}</span>
+            </div>
+            {% endif %}
+            
+            {% if personal_information.linkedin %}
+            <div class="contact-item">
+                <span class="contact-icon">LinkedIn :</span>
+                <span><a href="https://{{ personal_information.linkedin }}" style="color: var(--white);">{{ personal_information.linkedin }}</a></span>
+            </div>
+            {% endif %}
+        </div>
+    </header>
+    
+    {% if personal_information.profile_summary %}
+    <div class="profile-section">
+        <h3>Professional Profile</h3>
+        <p>{{ personal_information.profile_summary }}</p>
+    </div>
+    {% endif %}
+
+    <div class="two-column">
+        <div>
+            {% if work_experience and work_experience[0].job_title %}
+            <section>
+                <h2 class="section-title">Work Experience</h2>
+                {% for job in work_experience %}
+                    {% if job.job_title %}
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <span class="job-title">{{ job.job_title }}</span>
+                                {% if job.company %} <span class="company">| {{ job.company }}</span>{% endif %}
+                            </div>
+                            <div class="date">
+                                {{ job.start_date }} - {% if job.is_current %}Present{% else %}{{ job.end_date }}{% endif %}
+                            </div>
+                        </div>
+                        {% if job.location %}
+                            <p><em>{{ job.location }}</em></p>
+                        {% endif %}
+                        
+                        {% if job.responsibilities and job.responsibilities[0] %}
+                        <h4>Responsibilities:</h4>
+                        <ul>
+                            {% for responsibility in job.responsibilities %}
+                                {% if responsibility %}<li>{{ responsibility }}</li>{% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        
+                        {% if job.achievements and job.achievements[0] %}
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            {% for achievement in job.achievements %}
+                                {% if achievement %}<li>{{ achievement }}</li>{% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </section>
+            {% endif %}
+        </div>
+        
+        <div>
+            {% if skills and skills.categories and skills.categories[0].name %}
+            <section>
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="skills-container">
+                    {% for category in skills.categories %}
+                        {% if category.name and category.skills and category.skills[0] %}
+                        <div class="skill-category">
+                            <h4>{{ category.name }}</h4>
+                            <div class="skill-tags">
+                                {% for skill in category.skills %}
+                                    {% if skill %}<span class="skill-tag">{{ skill }}</span>{% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+            
+            {% if education and education[0].degree %}
+            <section>
+                <h2 class="section-title">Education</h2>
+                {% for edu in education %}
+                    {% if edu.degree %}
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div>
+                                <span class="education-degree">{{ edu.degree }}</span>
+                                {% if edu.field_of_study %} in {{ edu.field_of_study }}{% endif %}
+                            </div>
+                            <div class="date">
+                                {{ edu.start_date }} - {{ edu.end_date }}
+                            </div>
+                        </div>
+                        {% if edu.institution %}
+                            <p><strong>{{ edu.institution }}</strong></p>
+                        {% endif %}
+                        {% if edu.location %}
+                            <p>{{ edu.location }}</p>
+                        {% endif %}
+                        {% if edu.grade %}
+                            <p>Grade: {{ edu.grade }}</p>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </section>
+            {% endif %}
+            
+            {% if languages and languages[0] %}
+            <section>
+                <h2 class="section-title">Languages</h2>
+                <div class="skill-tags">
+                    {% for language in languages %}
+                        {% if language %}<span class="skill-tag">{{ language }}</span>{% endif %}
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+        </div>
+    </div>
+    
+    {% if certifications and certifications[0].title %}
+    <section>
+        <h2 class="section-title">Certifications</h2>
+        {% for cert in certifications %}
+            {% if cert.title %}
+            <div class="certification">
+                <h3>{{ cert.title }}</h3>
+                <p>
+                    {% if cert.issuer %}<strong>{{ cert.issuer }}</strong>{% endif %}
+                    {% if cert.issue_date %} | Issued: {{ cert.issue_date }}{% endif %}
+                    {% if cert.expiration_date %} | Expires: {{ cert.expiration_date }}{% endif %}
+                </p>
+                {% if cert.credential_id %}
+                    <p>Credential ID: {{ cert.credential_id }}</p>
+                {% endif %}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+    {% endif %}
+</body>
+</html>

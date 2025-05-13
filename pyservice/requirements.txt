@@ -1,0 +1,8 @@
+fastapi
+black
+uvicorn
+pydantic
+litellm
+google-adk
+jinja2
+pdfkit
