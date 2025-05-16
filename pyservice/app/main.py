@@ -10,8 +10,10 @@ from app.logger_config import logger  # 👈 Import logger setup
 from jinja2 import Environment, FileSystemLoader
 import pdfkit
 
+from app.scrsper.indeed_scraper import scrape_indeed_jobs
+
 app = FastAPI(
-    title="Book Analysis Service",
+    title="Book Analysis API",
     description="Provides analytical functions for books",
     version="1.0.0",
 )
@@ -57,3 +59,10 @@ async def generate_cv(template_type: str = "classic"):
     # pdfkit.from_file('app/generate_cv/cv_output.html', 'app/generate_cv/cv_output.pdf')
 
     return {"message": "CV generated successfully"}
+
+
+# get posted jobs from indeed
+@app.post("/api/get_jobs")
+async def get_jobs(query: str, location: str, max_results: int):
+    jobs = await scrape_indeed_jobs(keyword=query, location=location)
+    return {"jobs": jobs}

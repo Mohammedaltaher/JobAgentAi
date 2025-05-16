@@ -6,3 +6,11 @@ litellm
 google-adk
 jinja2
 pdfkit
+bs4
+fake_useragent
+pandas
+lxml
+httpx
+playwright
+playwright-stealth
+scrapy
