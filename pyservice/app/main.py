@@ -1,5 +1,5 @@
 import json
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
@@ -10,7 +10,7 @@ from app.logger_config import logger  # 👈 Import logger setup
 from jinja2 import Environment, FileSystemLoader
 import pdfkit
 
-from app.scrsper.indeed_scraper import scrape_indeed_jobs
+from app.scrsper.indeed_scraper import scrape_google_job_results
 
 app = FastAPI(
     title="Book Analysis API",
@@ -24,6 +24,12 @@ class BookAnalysisRequest(BaseModel):
     author: str
     published_date: Optional[datetime] = None
     isbn: Optional[str] = None
+
+
+class GoogleJobScrapeRequest(BaseModel):
+    keyword: str
+    location: str
+    num_search_pages: int = 1
 
 
 @app.post("/api/ask")
@@ -61,8 +67,15 @@ async def generate_cv(template_type: str = "classic"):
     return {"message": "CV generated successfully"}
 
 
-# get posted jobs from indeed
-@app.post("/api/get_jobs")
-async def get_jobs(query: str, location: str, max_results: int):
-    jobs = await scrape_indeed_jobs(keyword=query, location=location)
-    return {"jobs": jobs}
+@app.post("/api/scrape_google_jobs")
+async def scrape_google_jobs(request: GoogleJobScrapeRequest):
+    """
+    Scrape Google job results for a given keyword and location.
+    """
+    try:
+        results = await scrape_google_job_results(
+            request.keyword, request.location, request.num_search_pages
+        )
+        return {"results": results}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
