@@ -3,114 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Eltaher - Professional CV</title>
+    <title>Mohamed Eltaher - CV</title>
     <style>
         :root {
-            --primary: #5e35b1;
-            --primary-light: #7e57c2;
-            --secondary: #26a69a;
-            --dark: #263238;
-            --light: #eceff1;
-            --white: #ffffff;
-            --gray: #90a4ae;
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #334155;
+            --light-gray: #f1f5f9;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #64748b;
         }
-        
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Slab:wght@300;400;500&display=swap');
         
         body {
-            font-family: 'Roboto Slab', serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--white);
+            color: var(--text-color);
+            background-color: white;
             max-width: 900px;
             margin: 0 auto;
-            padding: 0;
+            padding: 2rem 1rem;
         }
         
-        .page-header {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 2.5rem 2rem;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 2rem;
-        }
-        
-        .name-title {
-            text-align: center;
-            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--medium-gray);
         }
         
         .name-title h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 2.8rem;
+            color: var(--primary-color);
             margin: 0;
-            letter-spacing: -0.5px;
-        }
-        
-        .name-title h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            font-size: 1.3rem;
-            margin: 0.5rem 0 0;
-            color: var(--light);
+            font-size: 2.5rem;
         }
         
         .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            text-align: right;
         }
         
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .contact-info p {
+            margin: 0.3rem 0;
         }
         
-        .contact-icon {
-            font-size: 1.2rem;
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
         }
         
-        .profile-section {
-            background-color: var(--light);
-            padding: 1.5rem 2rem;
-            margin: 0 2rem 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .profile-section h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary);
-            margin-top: 0;
-            border-bottom: 2px solid var(--primary-light);
-            padding-bottom: 0.5rem;
-            display: inline-block;
+        a:hover {
+            text-decoration: underline;
         }
         
         section {
-            margin: 0 2rem 2.5rem;
+            margin-bottom: 2rem;
         }
         
-        h2.section-title {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary);
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 0.3rem;
+            margin-bottom: 1rem;
             font-size: 1.5rem;
-            border-left: 4px solid var(--secondary);
-            padding-left: 1rem;
-            margin: 2rem 0 1.5rem;
         }
         
-        .job, .education-item, .certification, .project {
-            margin-bottom: 1.8rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px dashed var(--gray);
+        h3 {
+            margin-bottom: 0.3rem;
+            color: var(--text-color);
         }
         
-        .job:last-child, .education-item:last-child {
-            border-bottom: none;
+        .job, .education-item, .certification, .project, .volunteering, .award, .publication {
+            margin-bottom: 1.5rem;
         }
         
         .job-header, .education-header {
@@ -120,41 +84,41 @@
         }
         
         .job-title, .education-degree {
-            font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             font-size: 1.1rem;
-            color: var(--dark);
         }
         
-        .company {
-            color: var(--primary-light);
-            font-weight: 500;
-        }
-        
-        .date {
-            color: var(--gray);
+        .company, .institution {
             font-style: italic;
         }
         
+        .date {
+            color: var(--dark-gray);
+        }
+        
         ul {
-            padding-left: 1.3rem;
+            padding-left: 1.2rem;
+            margin: 0.5rem 0;
         }
         
         li {
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
         }
         
         .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 200px;
         }
         
         .skill-category h4 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--secondary);
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
         }
         
         .skill-tags {
@@ -164,437 +128,461 @@
         }
         
         .skill-tag {
-            background-color: var(--primary-light);
-            color: var(--white);
+            background-color: var(--light-gray);
             padding: 0.3rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-        }
-        
-        .two-column {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            border-radius: 9999px;
+            font-size: 0.9rem;
         }
         
         @media (max-width: 768px) {
-            .two-column {
-                grid-template-columns: 1fr;
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
             }
             
-            .page-header, section, .profile-section {
-                padding: 1.5rem;
-                margin: 0 0 1.5rem;
-            }
-            
-            .name-title h1 {
-                font-size: 2.2rem;
+            .contact-info {
+                text-align: left;
             }
         }
     </style>
 </head>
 <body>
-    <header class="page-header">
+    <div class="header">
         <div class="name-title">
             <h1>Mohamed Eltaher</h1>
             
-                <h2>Full stack Developer</h2>
+                <p>Highly skilled Full stack Developer specializing in .NET and C#, with extensive experience in designing and implementing robust backend systems using Microservices Architecture. Proficient in building APIs (REST, SOAP), leveraging ORM technologies (Entity Framework, Dapper), and working with various databases (MSSQL, MongoDB, MySQL, Cosmos DB, Oracle). Experienced in containerization with Docker, cloud platforms (Azure), and implementing asynchronous messaging (RabbitMQ), CQRS (MediatR, Hangfire), and DDD. Proven ability to solve complex problems, manage multi-project environments, and deliver scalable and efficient solutions.</p>
             
         </div>
-        
         <div class="contact-info">
             
-            <div class="contact-item">
-                <span>dev.eltaher@gmail.com</span>
-            </div>
+                <p><strong>Email:</strong> dev.eltaher@gmail.com</p>
             
             
-            
-            <div class="contact-item">
-                <span>+971585199391</span>
-            </div>
+                <p><strong>Phone:</strong> +971585199391</p>
             
             
+                <p><strong>Location:</strong> Sharjah, UAE</p>
             
-            <div class="contact-item">
-                <span>Sharjah, UAE</span>
-            </div>
             
             
             
         </div>
-    </header>
-    
-    
-    <div class="profile-section">
-        <h3>Professional Profile</h3>
-        <p>Highly skilled Full stack Developer specializing in .NET and C#, with extensive experience in designing and implementing robust backend systems using Microservices Architecture. Proficient in building APIs (REST, SOAP), leveraging ORM technologies (Entity Framework, Dapper), and working with various databases (MSSQL, MongoDB, MySQL, Cosmos DB, Oracle). Experienced in containerization with Docker, cloud platforms (Azure), and implementing asynchronous messaging (RabbitMQ), CQRS (MediatR, Hangfire), and DDD. Proven ability to solve complex problems, manage multi-project environments, and deliver scalable and efficient solutions.</p>
     </div>
+
+    
+    <section>
+        <h2>Career Objective</h2>
+        <p>Highly skilled Full stack Developer specializing in .NET and C#, with extensive experience in designing and implementing robust backend systems using Microservices Architecture. Proficient in building APIs (REST, SOAP), leveraging ORM technologies (Entity Framework, Dapper), and working with various databases (MSSQL, MongoDB, MySQL, Cosmos DB, Oracle). Experienced in containerization with Docker, cloud platforms (Azure), and implementing asynchronous messaging (RabbitMQ), CQRS (MediatR, Hangfire), and DDD. Proven ability to solve complex problems, manage multi-project environments, and deliver scalable and efficient solutions.</p>
+    </section>
     
 
-    <div class="two-column">
-        <div>
-            
-            <section>
-                <h2 class="section-title">Work Experience</h2>
-                
-                    
-                    <div class="job">
-                        <div class="job-header">
-                            <div>
-                                <span class="job-title">Full stack Developer</span>
-                                 <span class="company">| Department of Municipal Affairs - Sharjah</span>
-                            </div>
-                            <div class="date">
-                                2022-11 - Present
-                            </div>
-                        </div>
-                        
-                            <p><em>Sharjah, UAE</em></p>
-                        
-                        
-                        
-                        <h4>Responsibilities:</h4>
-                        <ul>
-                            
-                                <li>Led the development and management of a large-scale system for building and construction NOC management across Sharjah municipalities.</li>
-                            
-                        </ul>
-                        
-                        
-                        
-                        <h4>Key Achievements:</h4>
-                        <ul>
-                            
-                                <li>Successfully built a dynamic NOC management system enabling administrators to define customizable services, fields, and workflows, significantly streamlining the approval process.</li>
-                            
-                                <li>Implemented a robust microservices architecture utilizing MediatR for CQRS and RabbitMQ for asynchronous message processing, enhancing system scalability and maintainability.</li>
-                            
-                                <li>Developed an intuitive admin interface for efficient process control and simplified service management across multiple municipalities.</li>
-                            
-                        </ul>
-                        
-                    </div>
-                    
-                
-                    
-                    <div class="job">
-                        <div class="job-header">
-                            <div>
-                                <span class="job-title">Backend Developer (.Net)</span>
-                                 <span class="company">| Ahoy</span>
-                            </div>
-                            <div class="date">
-                                2022-04 - 2022-11
-                            </div>
-                        </div>
-                        
-                            <p><em>Dubai, UAE</em></p>
-                        
-                        
-                        
-                        <h4>Responsibilities:</h4>
-                        <ul>
-                            
-                                <li>Contributed to the development of Ahoy Management Studio (AMS), a SaaS platform providing tracking and movement solutions.</li>
-                            
-                        </ul>
-                        
-                        
-                        
-                        <h4>Key Achievements:</h4>
-                        <ul>
-                            
-                                <li>Developed and optimized APIs for point-of-interest indexing using Azure Cognitive Search, resulting in significantly faster data retrieval and improved platform performance.</li>
-                            
-                        </ul>
-                        
-                    </div>
-                    
-                
-                    
-                    <div class="job">
-                        <div class="job-header">
-                            <div>
-                                <span class="job-title">Backend Developer (.Net)</span>
-                                 <span class="company">| Dubai Civil Aviation Authority</span>
-                            </div>
-                            <div class="date">
-                                2020-07 - 2022-04
-                            </div>
-                        </div>
-                        
-                            <p><em>Dubai, UAE</em></p>
-                        
-                        
-                        
-                        <h4>Responsibilities:</h4>
-                        <ul>
-                            
-                                <li>Developed the Dubai Civil Aviation Authority website and integrated it with various government entities to automate processes.</li>
-                            
-                        </ul>
-                        
-                        
-                        
-                        <h4>Key Achievements:</h4>
-                        <ul>
-                            
-                                <li>Successfully configured the EPMS ERP system and conducted comprehensive end-user training, providing demos and support.</li>
-                            
-                                <li>Integrated Azure services (Bing Search, AI image processing) into internal systems, enhancing automation capabilities.</li>
-                            
-                        </ul>
-                        
-                    </div>
-                    
-                
-                    
-                    <div class="job">
-                        <div class="job-header">
-                            <div>
-                                <span class="job-title">Backend Developer (.Net)</span>
-                                 <span class="company">| Datamatix</span>
-                            </div>
-                            <div class="date">
-                                2018-04 - 2020-05
-                            </div>
-                        </div>
-                        
-                            <p><em>Dubai, UAE</em></p>
-                        
-                        
-                        
-                        <h4>Responsibilities:</h4>
-                        <ul>
-                            
-                                <li>Designed and implemented a new ERP system for charitable organizations based on DDD-oriented microservices.</li>
-                            
-                        </ul>
-                        
-                        
-                        
-                        <h4>Key Achievements:</h4>
-                        <ul>
-                            
-                                <li>Implemented domain events using MediatR and integrated with Hangfire for CQRS scheduling, improving system architecture and efficiency.</li>
-                            
-                                <li>Applied SOLID principles extensively and built resilient, scalable applications using an EventBus abstraction for asynchronous messaging with RabbitMQ, significantly enhancing system reliability.</li>
-                            
-                        </ul>
-                        
-                    </div>
-                    
-                
-                    
-                    <div class="job">
-                        <div class="job-header">
-                            <div>
-                                <span class="job-title">Full Stack Developer (.NET)</span>
-                                 <span class="company">| HASH IT</span>
-                            </div>
-                            <div class="date">
-                                2017-03 - 2018-04
-                            </div>
-                        </div>
-                        
-                            <p><em>Khartoum, Sudan</em></p>
-                        
-                        
-                        
-                        <h4>Responsibilities:</h4>
-                        <ul>
-                            
-                                <li>Worked as a Full Stack Developer on multiple projects for diverse industries.</li>
-                            
-                        </ul>
-                        
-                        
-                        
-                    </div>
-                    
-                
-            </section>
-            
-        </div>
-        
-        <div>
-            
-            <section>
-                <h2 class="section-title">Skills & Expertise</h2>
-                <div class="skills-container">
-                    
-                        
-                        <div class="skill-category">
-                            <h4>Backend</h4>
-                            <div class="skill-tags">
-                                
-                                    <span class="skill-tag">C#</span>
-                                
-                                    <span class="skill-tag">ASP.NET Core</span>
-                                
-                                    <span class="skill-tag">AspNet MVC</span>
-                                
-                                    <span class="skill-tag">OOP</span>
-                                
-                                    <span class="skill-tag">.NET</span>
-                                
-                                    <span class="skill-tag">.NET Core</span>
-                                
-                                    <span class="skill-tag">.NET Framework</span>
-                                
-                                    <span class="skill-tag">Swagger</span>
-                                
-                                    <span class="skill-tag">WebForms</span>
-                                
-                                    <span class="skill-tag">RESTful api</span>
-                                
-                                    <span class="skill-tag">Microservices</span>
-                                
-                                    <span class="skill-tag">MediatR</span>
-                                
-                                    <span class="skill-tag">RabbitMQ</span>
-                                
-                                    <span class="skill-tag">CQRS</span>
-                                
-                                    <span class="skill-tag">DDD</span>
-                                
-                                    <span class="skill-tag">SOLID</span>
-                                
-                            </div>
-                        </div>
-                        
-                    
-                        
-                        <div class="skill-category">
-                            <h4>Database</h4>
-                            <div class="skill-tags">
-                                
-                                    <span class="skill-tag">MSSQL</span>
-                                
-                                    <span class="skill-tag">MongoDB</span>
-                                
-                                    <span class="skill-tag">dapper</span>
-                                
-                                    <span class="skill-tag">MySQL</span>
-                                
-                                    <span class="skill-tag">Entity framework</span>
-                                
-                                    <span class="skill-tag">ADO.NET</span>
-                                
-                                    <span class="skill-tag">Cosmos DB</span>
-                                
-                                    <span class="skill-tag">Oracle</span>
-                                
-                            </div>
-                        </div>
-                        
-                    
-                        
-                        <div class="skill-category">
-                            <h4>Frontend</h4>
-                            <div class="skill-tags">
-                                
-                                    <span class="skill-tag">HTML</span>
-                                
-                                    <span class="skill-tag">CSS</span>
-                                
-                                    <span class="skill-tag">Blazor</span>
-                                
-                                    <span class="skill-tag">JQuery</span>
-                                
-                                    <span class="skill-tag">JSON</span>
-                                
-                                    <span class="skill-tag">Angular</span>
-                                
-                                    <span class="skill-tag">React</span>
-                                
-                                    <span class="skill-tag">XML</span>
-                                
-                                    <span class="skill-tag">AJAX</span>
-                                
-                                    <span class="skill-tag">Bootstrap</span>
-                                
-                                    <span class="skill-tag">Javascript</span>
-                                
-                            </div>
-                        </div>
-                        
-                    
-                        
-                        <div class="skill-category">
-                            <h4>DevOps</h4>
-                            <div class="skill-tags">
-                                
-                                    <span class="skill-tag">Unit Testing</span>
-                                
-                                    <span class="skill-tag">NUnit</span>
-                                
-                                    <span class="skill-tag">Moq</span>
-                                
-                                    <span class="skill-tag">IIS</span>
-                                
-                                    <span class="skill-tag">Git</span>
-                                
-                                    <span class="skill-tag">TFS</span>
-                                
-                                    <span class="skill-tag">GitHub</span>
-                                
-                                    <span class="skill-tag">Azure</span>
-                                
-                                    <span class="skill-tag">Docker</span>
-                                
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </section>
-            
-            
-            
-            <section>
-                <h2 class="section-title">Education</h2>
-                
-                    
-                    <div class="education-item">
-                        <div class="education-header">
-                            <div>
-                                <span class="education-degree">Bachelor</span>
-                                 in Computer Science
-                            </div>
-                            <div class="date">
-                                None - None
-                            </div>
-                        </div>
-                        
-                            <p><strong>Alneelain university</strong></p>
-                        
-                        
-                            <p>Khartoum, Sudan</p>
-                        
-                        
-                    </div>
-                    
-                
-            </section>
-            
-            
-            
-            <section>
-                <h2 class="section-title">Languages</h2>
-                <div class="skill-tags">
-                    
-                        <span class="skill-tag">Arabic</span>
-                    
-                        <span class="skill-tag">English</span>
-                    
-                </div>
-            </section>
-            
-        </div>
-    </div>
     
+    <section>
+        <h2>Work Experience</h2>
+        
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Full stack Developer</span>
+                         at <span class="company">Department of Municipal Affairs - Sharjah</span>
+                    </div>
+                    <div class="date">
+                        2022-11 - Present
+                    </div>
+                </div>
+                
+                    <p><em>Sharjah, UAE</em></p>
+                
+                
+                
+                <h4>Responsibilities:</h4>
+                <ul>
+                    
+                        <li>Led the development and management of a large-scale system for building and construction NOC management across Sharjah municipalities.</li>
+                    
+                </ul>
+                
+                
+                
+                <h4>Achievements:</h4>
+                <ul>
+                    
+                        <li>Successfully built a dynamic NOC management system enabling administrators to define customizable services, fields, and workflows, significantly streamlining the approval process.</li>
+                    
+                        <li>Implemented a robust microservices architecture utilizing MediatR for CQRS and RabbitMQ for asynchronous message processing, enhancing system scalability and maintainability.</li>
+                    
+                        <li>Developed an intuitive admin interface for efficient process control and simplified service management across multiple municipalities.</li>
+                    
+                </ul>
+                
+            </div>
+            
+        
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Backend Developer (.Net)</span>
+                         at <span class="company">Ahoy</span>
+                    </div>
+                    <div class="date">
+                        2022-04 - 2022-11
+                    </div>
+                </div>
+                
+                    <p><em>Dubai, UAE</em></p>
+                
+                
+                
+                <h4>Responsibilities:</h4>
+                <ul>
+                    
+                        <li>Contributed to the development of Ahoy Management Studio (AMS), a SaaS platform providing tracking and movement solutions.</li>
+                    
+                </ul>
+                
+                
+                
+                <h4>Achievements:</h4>
+                <ul>
+                    
+                        <li>Developed and optimized APIs for point-of-interest indexing using Azure Cognitive Search, resulting in significantly faster data retrieval and improved platform performance.</li>
+                    
+                </ul>
+                
+            </div>
+            
+        
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Backend Developer (.Net)</span>
+                         at <span class="company">Dubai Civil Aviation Authority</span>
+                    </div>
+                    <div class="date">
+                        2020-07 - 2022-04
+                    </div>
+                </div>
+                
+                    <p><em>Dubai, UAE</em></p>
+                
+                
+                
+                <h4>Responsibilities:</h4>
+                <ul>
+                    
+                        <li>Developed the Dubai Civil Aviation Authority website and integrated it with various government entities to automate processes.</li>
+                    
+                </ul>
+                
+                
+                
+                <h4>Achievements:</h4>
+                <ul>
+                    
+                        <li>Successfully configured the EPMS ERP system and conducted comprehensive end-user training, providing demos and support.</li>
+                    
+                        <li>Integrated Azure services (Bing Search, AI image processing) into internal systems, enhancing automation capabilities.</li>
+                    
+                </ul>
+                
+            </div>
+            
+        
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Backend Developer (.Net)</span>
+                         at <span class="company">Datamatix</span>
+                    </div>
+                    <div class="date">
+                        2018-04 - 2020-05
+                    </div>
+                </div>
+                
+                    <p><em>Dubai, UAE</em></p>
+                
+                
+                
+                <h4>Responsibilities:</h4>
+                <ul>
+                    
+                        <li>Designed and implemented a new ERP system for charitable organizations based on DDD-oriented microservices.</li>
+                    
+                </ul>
+                
+                
+                
+                <h4>Achievements:</h4>
+                <ul>
+                    
+                        <li>Implemented domain events using MediatR and integrated with Hangfire for CQRS scheduling, improving system architecture and efficiency.</li>
+                    
+                        <li>Applied SOLID principles extensively and built resilient, scalable applications using an EventBus abstraction for asynchronous messaging with RabbitMQ, significantly enhancing system reliability.</li>
+                    
+                </ul>
+                
+            </div>
+            
+        
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Full Stack Developer (.NET)</span>
+                         at <span class="company">HASH IT</span>
+                    </div>
+                    <div class="date">
+                        2017-03 - 2018-04
+                    </div>
+                </div>
+                
+                    <p><em>Khartoum, Sudan</em></p>
+                
+                
+                
+                <h4>Responsibilities:</h4>
+                <ul>
+                    
+                        <li>Worked as a Full Stack Developer on multiple projects for diverse industries.</li>
+                    
+                </ul>
+                
+                
+                
+            </div>
+            
+        
+    </section>
+    
+
+    
+    <section>
+        <h2>Education</h2>
+        
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <span class="education-degree">Bachelor</span>
+                         in Computer Science
+                         at <span class="institution">Alneelain university</span>
+                    </div>
+                    <div class="date">
+                        None - None
+                    </div>
+                </div>
+                
+                    <p><em>Khartoum, Sudan</em></p>
+                
+                
+            </div>
+            
+        
+    </section>
+    
+
+    
+    <section>
+        <h2>Skills</h2>
+        <div class="skills-container">
+            
+                
+                <div class="skill-category">
+                    <h4>Backend</h4>
+                    <div class="skill-tags">
+                        
+                            <span class="skill-tag">C#</span>
+                        
+                            <span class="skill-tag">ASP.NET Core</span>
+                        
+                            <span class="skill-tag">AspNet MVC</span>
+                        
+                            <span class="skill-tag">OOP</span>
+                        
+                            <span class="skill-tag">.NET</span>
+                        
+                            <span class="skill-tag">.NET Core</span>
+                        
+                            <span class="skill-tag">.NET Framework</span>
+                        
+                            <span class="skill-tag">Swagger</span>
+                        
+                            <span class="skill-tag">WebForms</span>
+                        
+                            <span class="skill-tag">RESTful api</span>
+                        
+                            <span class="skill-tag">Microservices</span>
+                        
+                            <span class="skill-tag">MediatR</span>
+                        
+                            <span class="skill-tag">RabbitMQ</span>
+                        
+                            <span class="skill-tag">CQRS</span>
+                        
+                            <span class="skill-tag">DDD</span>
+                        
+                            <span class="skill-tag">SOLID</span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                <div class="skill-category">
+                    <h4>Database</h4>
+                    <div class="skill-tags">
+                        
+                            <span class="skill-tag">MSSQL</span>
+                        
+                            <span class="skill-tag">MongoDB</span>
+                        
+                            <span class="skill-tag">dapper</span>
+                        
+                            <span class="skill-tag">MySQL</span>
+                        
+                            <span class="skill-tag">Entity framework</span>
+                        
+                            <span class="skill-tag">ADO.NET</span>
+                        
+                            <span class="skill-tag">Cosmos DB</span>
+                        
+                            <span class="skill-tag">Oracle</span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                <div class="skill-category">
+                    <h4>Frontend</h4>
+                    <div class="skill-tags">
+                        
+                            <span class="skill-tag">HTML</span>
+                        
+                            <span class="skill-tag">CSS</span>
+                        
+                            <span class="skill-tag">Blazor</span>
+                        
+                            <span class="skill-tag">JQuery</span>
+                        
+                            <span class="skill-tag">JSON</span>
+                        
+                            <span class="skill-tag">Angular</span>
+                        
+                            <span class="skill-tag">React</span>
+                        
+                            <span class="skill-tag">XML</span>
+                        
+                            <span class="skill-tag">AJAX</span>
+                        
+                            <span class="skill-tag">Bootstrap</span>
+                        
+                            <span class="skill-tag">Javascript</span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                <div class="skill-category">
+                    <h4>DevOps</h4>
+                    <div class="skill-tags">
+                        
+                            <span class="skill-tag">Unit Testing</span>
+                        
+                            <span class="skill-tag">NUnit</span>
+                        
+                            <span class="skill-tag">Moq</span>
+                        
+                            <span class="skill-tag">IIS</span>
+                        
+                            <span class="skill-tag">Git</span>
+                        
+                            <span class="skill-tag">TFS</span>
+                        
+                            <span class="skill-tag">GitHub</span>
+                        
+                            <span class="skill-tag">Azure</span>
+                        
+                            <span class="skill-tag">Docker</span>
+                        
+                    </div>
+                </div>
+                
+            
+        </div>
+    </section>
+    
+
+    
+
+    
+    <section>
+        <h2>Projects</h2>
+        
+            
+            <div class="project">
+                <h3>EDU PRO</h3>
+                
+                    <p>Developed a real-time information management system with over 30 modules for educational institutions.</p>
+                
+                
+                
+            </div>
+            
+        
+            
+            <div class="project">
+                <h3>DENTAL.PRO</h3>
+                
+                    <p>Developed a system streamlining dental care and clinic operations.</p>
+                
+                
+                
+            </div>
+            
+        
+            
+            <div class="project">
+                <h3>FINGER.PAY</h3>
+                
+                    <p>Developed a biometric payment system utilizing fingerprint authentication for secure transactions.</p>
+                
+                
+                
+            </div>
+            
+        
+    </section>
+    
+
+    
+    <section>
+        <h2>Languages</h2>
+        <div class="skill-tags">
+            
+                <span class="skill-tag">Arabic</span>
+            
+                <span class="skill-tag">English</span>
+            
+        </div>
+    </section>
+    
+
+    
+
+    
+
+    
+
+    
+
     
 </body>
 </html>
