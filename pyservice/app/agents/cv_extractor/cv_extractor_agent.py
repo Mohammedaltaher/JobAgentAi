@@ -2,17 +2,17 @@ import datetime
 import logging
 import os
 import uuid
-from app.agents.cv_extractor.tools import get_agent_instruction
+import asyncio
+from os import getenv
 from dotenv import load_dotenv
+from app.agents.cv_extractor.tools import get_agent_instruction
+from app.agents.cv_extractor.ollama_connector import get_ollama_connection
 from google.adk.agents import Agent
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from google.adk.memory import InMemoryMemoryService
 from google.genai import types
 from google.adk.models.lite_llm import LiteLlm
-
-import asyncio
-from os import getenv
 
 # Configure logging to file in logs folder with current date
 log_date = datetime.datetime.now().strftime("%Y%m%d")
@@ -31,7 +31,17 @@ logger = logging.getLogger(__name__)
 # Load environment variables
 load_dotenv(".env")
 my_model = getenv("MODEL_GEMINI_2_0_FLASH")
-ollama_model = LiteLlm(model="ollama_chat/gemma3:4b")
+
+# Set up connection to Ollama
+api_base, model_name = get_ollama_connection()
+
+# Initialize the Ollama model
+if api_base and model_name:
+    logger.info(f"Initializing Ollama model {model_name} with API base {api_base}")
+    ollama_model = LiteLlm(model=model_name, api_base=api_base)
+else:
+    logger.error("Failed to set up Ollama connection, unable to proceed")
+    raise ValueError("Failed to set up Ollama connection. Please run setup_ollama_models.py first.")
 
 root_agent = Agent(
     name="agent_manager",
