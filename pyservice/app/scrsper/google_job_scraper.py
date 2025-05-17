@@ -7,9 +7,17 @@ from playwright_stealth import stealth_async
 import datetime
 import logging
 
-# Configure logging
+# Configure logging to file in logs folder with current date
+log_date = datetime.datetime.now().strftime("%Y%m%d")
+log_filename = os.path.join(os.getcwd(), "logs", f"Scraper_{log_date}.log")
+os.makedirs(os.path.dirname(log_filename), exist_ok=True)
 logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler(log_filename, encoding="utf-8"),
+        logging.StreamHandler(),
+    ],
 )
 logger = logging.getLogger(__name__)
 

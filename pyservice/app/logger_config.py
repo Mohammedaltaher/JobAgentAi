@@ -14,11 +14,11 @@ logger.setLevel(logging.INFO)
 # Avoid duplicate handlers on reload
 if not logger.handlers:
     handler = TimedRotatingFileHandler(
-        filename=os.path.join(log_dir, "app.log"),
+        filename=os.path.join(log_dir, "app_%Y-%m-%d.txt"),
         when="midnight",
         interval=1,
         backupCount=7,
-        encoding="utf-8"
+        encoding="utf-8",
     )
     formatter = logging.Formatter(
         "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

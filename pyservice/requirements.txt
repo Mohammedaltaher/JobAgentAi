@@ -7,3 +7,4 @@ pdfkit
 playwright
 playwright-stealth
 google-adk
+litellm

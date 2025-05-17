@@ -1,8 +1,11 @@
 import json
+import re
 from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
+import sys
+import asyncio
 
 from app.agents.cv_extractor.cv_extractor_agent import call_agent
 from app.logger_config import logger  # 👈 Import logger setup
@@ -10,7 +13,10 @@ from app.logger_config import logger  # 👈 Import logger setup
 from jinja2 import Environment, FileSystemLoader
 import pdfkit
 
-from app.scrsper.indeed_scraper import scrape_google_job_results
+from app.scrsper.google_job_scraper import scrape_google_job_results
+
+if sys.platform.startswith("win"):
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 app = FastAPI(
     title="Book Analysis API",
@@ -32,17 +38,23 @@ class GoogleJobScrapeRequest(BaseModel):
     num_search_pages: int = 1
 
 
-@app.post("/api/ask")
-async def ask(query: str):
-    response = await call_agent(query)
-    json_response = json.loads(response.strip("```json").strip("```").strip())
-    return {"response": json_response}
-
-
 @app.get("/api/health")
 async def health_check():
     logger.info("Health check")
     return {"status": "healthy", "service": "book-analysis"}
+
+
+@app.post("/api/ask")
+async def ask(query: str):
+    response = await call_agent(query)
+    print("Response:", response)
+    match = re.search(r"```json\s*(\{.*\})\s*```", response, re.DOTALL)
+    if match:
+        json_str = match.group(1)
+        json_response = json.loads(json_str)
+        return {"response": json_response}
+    else:
+        raise HTTPException(status_code=400, detail="No JSON found in response.")
 
 
 # Generate CV
